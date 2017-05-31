@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <head>
-    <title>Maven + Spring MVC</title>
+    <title>Testing Committing</title>
 
     <%--<spring:url value="/resources/core/css/hello.css" var="coreCss" />--%>
     <%--<spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />--%>

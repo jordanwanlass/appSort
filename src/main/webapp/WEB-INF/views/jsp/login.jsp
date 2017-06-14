@@ -1,3 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <style type="text/css">
     body {
         padding-top: 40px;
@@ -42,20 +47,49 @@
 </style>
 
 <div class="container">
-    <c:url value="/login" var="loginUrl"/>
-
-    <form class="form-signin" action="${loginUrl}" type="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+    <div class="panel panel-default col-sm-6 col-sm-offset-3">
+        <div class="panel-body">
+            <c:url value="/login" var="loginUrl"/>
+            <c:choose>
+                <c:when test="${param.logout == null}">
+                    <form class="form-signin" role="form" action="${loginUrl}" method="post">
+                        <c:if test="${param.error != null}">
+                            <div class="alert alert-danger" role="alert">
+                                Invalid username and/or password.
+                            </div>
+                        </c:if>
+                        <h2 class="form-signin-heading">Please, Sign In</h2>
+                        <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                        <input type="hidden"
+                               name="${_csrf.parameterName}"
+                               value="${_csrf.token}"/>
+                        <div>
+                            Don't have an account?<a href="createAccountForm"> Create one here!</a>
+                        </div>
+                        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <div class="alert alert-success" role="alert" style="text-align: center;">
+                        You have been successfully logged out!
+                    </div>
+                    <script>
+                        setTimeout("logout();", 3000);
+                    </script>
+                </c:otherwise>
+            </c:choose>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+    </div>
+</div><!-- /container -->
+<script type="text/javascript">
+    ${timeout}
+    function refreshPage() {
+        alert("Your Session has expired.  The page will now reload to prevent errors.");
+        location.reload();
+    }
 
-</div> <!-- /container -->
+    function logout() {
+        window.location.href = 'exterior';
+    }
+</script>

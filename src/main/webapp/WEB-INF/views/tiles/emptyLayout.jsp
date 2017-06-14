@@ -14,8 +14,8 @@
 <section id="site-content">
     <tiles:insertAttribute name="body"/>
 </section>
-<spring:url value="/resources/js/materialize.min.js" var="bootstrapJs" />
-<script type="text/javascript" src="${bootstrapJs}"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
+<script type="text/javascript" src="${bootstrapJs}"></script>
 </body>
 </html>

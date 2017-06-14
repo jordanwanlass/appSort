@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Base Definition -->
+    <definition name="base-definition" template="/WEB-INF/views/tiles/exteriorLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="menu" value="/WEB-INF/views/tiles/templates/defaultMenu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/templates/defaultFooter.jsp" />
+    </definition>
+
+    <!-- Empty Definition -->
+    <definition name="empty-definition" template="/WEB-INF/views/tiles/emptyLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="" />
+    </definition>
+
+    <!-- default Definition -->
+    <definition name="default-definition" template="/WEB-INF/views/tiles/defaultLayout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="" />
+    </definition>
+
+    <!-- Home Page -->
+    <definition name="home" extends="base-definition">
+        <put-attribute name="title" value="Welcome" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
+    </definition>
+
+    <!-- Home Page -->
+    <definition name="exterior" extends="base-definition">
+        <put-attribute name="title" value="Welcome" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/mainExterior.jsp" />
+    </definition>
+
+    <!-- Login Page -->
+    <definition name="login" extends="empty-definition">
+        <put-attribute name="title" value="Welcome" />
+        <!--<put-attribute name="menu" value=""/>-->
+        <!--<put-attribute name="footer" value=""/>-->
+        <put-attribute name="body" value="/WEB-INF/views/jsp/login.jsp" />
+    </definition>
+
+    <!-- Dashbaord Page -->
+    <definition name="dashboard" extends="default-definition">
+        <put-attribute name="title" value="Welcome" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/dashboard.jsp" />
+    </definition>
+
+
+    <!-- Product Page -->
+    <definition name="aboutUs" extends="base-definition">
+        <put-attribute name="title" value="Products" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/aboutUs.jsp" />
+    </definition>
+
+    <!-- Contact-us Page -->
+    <definition name="contactUs" extends="base-definition">
+        <put-attribute name="title" value="Contact Us" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/contactUs.jsp" />
+    </definition>
+
+</tiles-definitions>

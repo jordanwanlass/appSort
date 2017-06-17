@@ -1,6 +1,5 @@
 package com.web.controllers;
 
-//import CustomAuthentication.CustomAuthenticationProvider;
 import CustomAuthentication.CustomAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;

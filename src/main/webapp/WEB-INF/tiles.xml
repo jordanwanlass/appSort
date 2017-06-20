@@ -46,7 +46,12 @@
     <!-- Dashbaord Page -->
     <definition name="dashboard" extends="default-definition">
         <put-attribute name="title" value="Welcome" />
-        <put-attribute name="body" value="/WEB-INF/views/jsp/dashboard.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
+    </definition>
+
+    <!-- Direct Order Page -->
+    <definition name="directOrder" extends="default-definition">
+        <put-attribute name="body" value="/WEB-INF/views/jsp/directOrder.jsp"/>
     </definition>
 
 

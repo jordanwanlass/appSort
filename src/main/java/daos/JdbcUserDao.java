@@ -18,6 +18,7 @@ public class JdbcUserDao implements UserDao {
     private String FIELD_LASTNAME = TABLE + ".lastName";
     private String FIELD_EMAIL = TABLE + ".email";
     private String FIELD_PASSWORD = TABLE + ".password";
+    private String FIELD_ROLE = TABLE + ".role";
 
     private DataSource dataSource;
 
@@ -42,7 +43,8 @@ public class JdbcUserDao implements UserDao {
                 String firstName = rs.getString(FIELD_FIRSTNAME);
                 String lastName = rs.getString(FIELD_LASTNAME);
                 String password = rs.getString(FIELD_PASSWORD);
-                return new User(id, firstName, lastName, email, password);
+                String role = rs.getString(FIELD_ROLE);
+                return new User(id, firstName, lastName, email, password, role);
             }
             ps.close();
         } catch (SQLException e) {

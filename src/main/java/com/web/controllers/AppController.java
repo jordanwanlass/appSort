@@ -58,4 +58,10 @@ public class AppController {
 
         return model;
     }
+
+    @RequestMapping(value = {"/directOrder"}, method = RequestMethod.GET)
+    public ModelAndView directOrder(ModelMap modelMap) {
+        ModelAndView modelAndView = new ModelAndView("directOrder");
+        return modelAndView;
+    }
 }
